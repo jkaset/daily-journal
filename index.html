@@ -9,8 +9,10 @@
 </head>
 <body>
   <header><img src="https://logo.stocklight.com/NASDAQ/DJCO_original.png" alt="Daily Journal"></header>
-
+  
   <div class="name">written by Jasmin Kaset</div>
+
+  <section class="form__main">
   <form action="" method="" class="form">
     <label class="form__element" for="today">Date:</label>
       <input type="date" id="today" name="today">
@@ -20,8 +22,8 @@
     <label class="form__element" for="concepts">Concepts covered:</label>
       <input type="text" id="concepts" name="concepts">
     
-    
-    <textarea class="form__element" for="entry" placeholder="Dear diary,"></textarea>
+    <label class="form__element" for="entry">Entry:</label>
+    <textarea class="form__element" for="entry" id="entryID" placeholder="Dear diary,"></textarea>
       
 
     <label class="form__element" for="mood">Vibe:</label>
@@ -37,6 +39,7 @@
 
     <button class="submit" type="button">Record entry</button>
   </form>
+</section>
 
   <footer class="foot">
     <ion-icon name="logo-github" ></ion-icon></div>

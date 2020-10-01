@@ -22,6 +22,10 @@ body {
   flex-direction: column;
 }
 
+.form__main {
+  margin: 3em 0 3em 4em;
+}
+
 textarea {
   width: 600px;
   height: 150px;
@@ -30,4 +34,24 @@ textarea {
 button {
   /* margin-left: 170px; */
   border-radius: 8px;
+  width: 100px;
+}
+
+#mood {
+  width: 175px;
+  margin-bottom: 1em;
+}
+
+#entryID {
+  margin-bottom: 1em;
+}
+
+#today {
+  width: 175px;
+  margin-bottom: 1em;
+}
+
+#concepts {
+  width: 175px;
+  margin-bottom: 1em;
 }
