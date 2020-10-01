@@ -1,3 +1,5 @@
+@import "footer.css";
+@import "diary__archive.css";
 
 img {
   width: 100%;
@@ -14,7 +16,7 @@ body {
   background-color: pink;
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
-  color: rgb(50, 50, 50);
+  color: black;
 }
 
 .form {
@@ -33,6 +35,11 @@ textarea {
 
 button {
   /* margin-left: 170px; */
+  border-radius: 8px;
+  width: 100px;
+}
+
+button:hover {
   border-radius: 8px;
   width: 100px;
 }

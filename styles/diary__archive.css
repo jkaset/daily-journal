@@ -1,0 +1,14 @@
+.diary {
+  border: 1px black solid;
+  background-color: white;
+  margin: 0 9em 4em 9em;
+}
+
+.diary__list {
+  list-style-type: none;
+}
+
+.diary__heading {
+  font-weight: normal;  
+  margin: 0 9em 0 9em;
+}

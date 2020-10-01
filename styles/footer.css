@@ -1,0 +1,14 @@
+.foot {
+  font-size: .7em;
+  display: flex;
+  justify-content: center;
+
+}
+
+.foot__element {
+  margin-right: 2em;
+}
+
+a:visited {
+  color: grey;
+}
