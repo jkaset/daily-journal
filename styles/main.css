@@ -29,8 +29,8 @@ body {
 }
 
 textarea {
-  width: 600px;
-  height: 150px;
+  width: 90%;
+  height: 10em;
 }
 
 button {
