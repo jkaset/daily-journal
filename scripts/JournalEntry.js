@@ -5,6 +5,6 @@ export const JournalEntryComponent = (entry) => {
     <div>${entry.concept}</div>
     <div>${entry.entry}</div>
     <div>${entry.mood}</div>
-  </section></div>
+  </section>
   `
 }
