@@ -1,11 +1,3 @@
-/*
- *   Journal data provider for Daily Journal application
- *
- *      Holds the raw data about each entry and exports
- *      functions that other modules can use to filter
- *      the entries for different purposes.
- */
-
 // This is the original data.
 const journal = [
   {
@@ -18,15 +10,15 @@ const journal = [
   {
     id: 2,
     date: "10/07/2020",
-    concept: "Complex Flexbox",
-    entry: "I tried to have an element in my Flexbox layout also be another Flexbox layout. It hurt my brain. I hate Steve.",
+    concept: "Git Workflow",
+    entry: "Repetition helps, just do it over and over and don't work on your main branch!",
     mood: "Head might explode"
 },
 {
   id: 3,
   date: "10/08/2020",
-  concept: "Complex Flexbox",
-  entry: "I tried to have an element in my Flexbox layout also be another Flexbox layout. It hurt my brain. I hate Steve.",
+  concept: "Importing in scripts",
+  entry: "Still confused about it, but you have to export and import functions in scripts and then put one import and function in main.js.",
   mood: "Chippin away"
 }
 ]
