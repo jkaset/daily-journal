@@ -2,24 +2,41 @@ import { useJournalEntries } from "./JournalDataProvider.js"
 import { JournalEntryComponent } from "./JournalEntry.js"
 
 // DOM reference to where all entries will be rendered
-//CHANGED CLASS HERE
-//MY CODE TO LOOK LIKE JISIES
-const buildEntryContainerHTML = (array) => {
-    let entryHTML = "" 
-    for const (element of array) {
-        entryHTML += JournalEntryComponent(element)
+const entryLog = document.querySelector(".diary")
+
+export const EntryListComponent = (entries) => {
+    // Use the journal entry data from the data provider component
+    let entryHTMLRepresentations = ""
+    const entries = useJournalEntries()
+
+    for (const entry of entries) {
+        /*
+            Invoke the component that returns an
+            HTML representation of a single entry
+        */
+    entryLog.innerHTML += 
     }
-    return entryHTML
 }
 
+// DOM reference to where all entries will be rendered
+// CHANGED CLASS HERE
+// MY CODE TO LOOK LIKE JISIES
+// const buildEntryContainerHTML = (array) => {
+//     let entryHTML = "" 
+//     for const (element of array) {
+//         entryHTML += JournalEntryComponent(element)
+//     }
+//     return entryHTML
+// }
 
-export const EntryListComponent = () => {
 
-    //MOVED THIS CODE INTO FUNCTION
-    const entryLog = document.querySelector(".diary")
+// export const EntryListComponent = () => {
+
+//     //MOVED THIS CODE INTO FUNCTION
+//     const entryLog = document.querySelector(".diary")
     
-    const entries = useJournalEntries()
-    console.log(entries)
+//     const entries = useJournalEntries()
+//     console.log(entries)
 
     // for (const entry of entries) {
 
