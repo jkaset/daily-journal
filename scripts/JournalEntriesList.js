@@ -16,9 +16,9 @@ export const EntryListComponent = () => {
         
     entryLog.innerHTML += `
         <div class="oneEntry">
-            <ul>
-            <li>${entryHTMLRepresentations}</li>
-            </ul>
+            
+            <p>${entryHTMLRepresentations}</p>
+            
         </div>
     `   
 }

@@ -1,3 +1,3 @@
-import { EntryListComponent } from './JournalEntriesList'
+import { EntryListComponent } from './JournalEntriesList.js'
 
 EntryListComponent()
