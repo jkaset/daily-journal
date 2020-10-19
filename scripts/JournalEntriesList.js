@@ -8,20 +8,29 @@ export const EntryListComponent = () => {
     // Use the journal entry data from the data provider component
     const entryLog = document.querySelector(".diary")
     const entries = useJournalEntries()
-    let entryHTMLRepresentations = ""
-    //let journalHTMLRepresentations = ""
-    for (const entry of entries) {
-        entryHTMLRepresentations += JournalEntryComponent(entry)
-    }
-        
+    // let entryHTMLRepresentations = ""
+    // //let journalHTMLRepresentations = ""
+    // for (const entry of entries) {
+    //     entryHTMLRepresentations += JournalEntryComponent(entry)
+    // }
+
     entryLog.innerHTML += `
-        <div class="oneEntry">
+    <div class="oneEntry">
             
-            <div class="entryEach">${entryHTMLRepresentations}</div>
+            <div class="entryEach">${entries.map(entry => JournalEntryComponent(entry)).join("")}</div>
             
         </div>
     `   
 }
+        
+//     entryLog.innerHTML += `
+//         <div class="oneEntry">
+            
+//             <div class="entryEach">${entryHTMLRepresentations}</div>
+            
+//         </div>
+//     `   
+// }
 
 // DOM reference to where all entries will be rendered
 // CHANGED CLASS HERE
