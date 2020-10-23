@@ -52,3 +52,21 @@ export const getEntries = () => {
           // What should happen when we finally have the array?
       })
 }
+
+const dispatchStateChangeEvent = () => {
+  eventHub.dispatchEvent(new CustomEvent("journalStateChanged"))
+}
+
+const saveJournalEntry = () => {
+  // Use `fetch` with the POST method to add your entry to your API
+  fetch("http://localhost:8088/entries", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(newJournalEntry)
+  })
+    .then(getEntries)  // <-- Get all journal entries
+    .then(dispatchStateChangeEvent)  // <-- Broadcast the state change event
+}
+
