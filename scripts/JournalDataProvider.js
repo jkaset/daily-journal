@@ -2,7 +2,7 @@
 // const eventHub = document.querySelector(".diary")
 // This is the original data.
 let entries = []
-
+const eventHub = document.querySelector(".container")
 // const dispatchStateChangeEvent = () => {
 //   const diaryStateChangedEvent = new CustomEvent("noteStateChanged")
 
@@ -57,7 +57,7 @@ const dispatchStateChangeEvent = () => {
   eventHub.dispatchEvent(new CustomEvent("journalStateChanged"))
 }
 
-const saveJournalEntry = () => {
+export const saveJournalEntry = (newJournalEntry) => {
   // Use `fetch` with the POST method to add your entry to your API
   fetch("http://localhost:8088/entries", {
     method: "POST",
