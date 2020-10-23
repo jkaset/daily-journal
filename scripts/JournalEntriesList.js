@@ -1,30 +1,32 @@
-import { useJournalEntries } from "./JournalDataProvider.js"
+import { getEntries, useJournalEntries } from "./JournalDataProvider.js"
 import { JournalEntryComponent } from "./JournalEntry.js"
 
-const contentTarget = document.querySelector(".form__main")
+const contentTarget = document.querySelector(".diary")
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("entryStateChanged", () => {EntryListComponent()})
 
 export const EntryListComponent = () => {
-    // Use the journal entry data from the data provider component
-    const entryLog = document.querySelector(".diary")
-    const entries = useJournalEntries()
-    // let entryHTMLRepresentations = ""
-    // //let journalHTMLRepresentations = ""
-    // for (const entry of entries) {
-    //     entryHTMLRepresentations += JournalEntryComponent(entry)
-    // }
-    //render(entries)
-
     //THIS WORKED BUT DIDN'T REFRESH
-    entryLog.innerHTML += `
-    <div class="oneEntry">
-            
-            <div class="entryEach">${entries.map(entry => JournalEntryComponent(entry)).join("")}</div>
-            
-        </div>
-    `   
+    // Use the journal entry data from the data provider component
+    // const entryLog = document.querySelector(".diary")
+    // const entries = useJournalEntries()
+    
+    //THIS WORKED BUT DIDN'T REFRESH
+    // entryLog.innerHTML += `
+    // <div class="oneEntry">
+    //         <div class="entryEach">${entries.map(entry => JournalEntryComponent(entry)).join("")}</div>
+    // </div>
+    // `   
+
+    getEntries()
+    
+    .then(() => {
+        const allEntries = useJournalEntries()
+        render(allEntries)
+    
+    })
+
 }
 
 const render = (entriesArray) => {
