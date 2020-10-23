@@ -1,4 +1,4 @@
-import {saveJournalEntry} from "../JournalDataProvider.js"
+import {getEntries, saveJournalEntry} from "../JournalDataProvider.js"
 
 const contentTarget = document.querySelector(".form__main")
 const eventHub = document.querySelector(".container")
@@ -33,9 +33,7 @@ contentTarget.innerHTML = `
   `
   }
 
-  export const JournalFormComponent = () => {
-    render()
-  }
+  
 
   eventHub.addEventListener("click", clickEvent =>{
     //console.log(clickEvent)
@@ -52,7 +50,13 @@ contentTarget.innerHTML = `
         mood: mood
       }
       saveJournalEntry(newEntry)
-      
+      getEntries()
+      render()
+      location.reload()
     }
     
   })
+
+  export const JournalFormComponent = () => {
+    render()
+  }
