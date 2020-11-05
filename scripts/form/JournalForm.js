@@ -1,11 +1,15 @@
 import {getEntries, saveJournalEntry} from "../JournalDataProvider.js"
+import {getMoods, useMoods} from "../MoodProvider.js"
 
 const contentTarget = document.querySelector(".form__main")
 const eventHub = document.querySelector(".container")
 
 const render = () => {
+getMoods().then(() => {
+  const allMoods = useMoods()
+
 contentTarget.innerHTML = `
-<form action="" method="" class="form">
+<form action="" method="" class="form" >
     
     <label class="form__element" for="today">Date:</label>
       <input type="date" id="form__date" name="today">
@@ -18,20 +22,20 @@ contentTarget.innerHTML = `
       
 
     <label class="form__element" for="mood">Vibe:</label>
-    <select name="mood" id="form__mood" >
-      <option value="Mood: I got this">I got this</option>
-      <option value="Mood: Chippin away">Chippin away</option>
-      <option value="Mood: I am genius!">I am genius!</option>
-      <option value="Schmood: Fallin behind">Fallin behind</option>
-      <option value="Mood: Banging head on keys">Banging head on keys</option>
-      <option value="Mood: Head might explode">Head might explode</option>
-      <option value="Mood: I'm cryin">I'm cryin</option>
+    <select name="mood" id="form__mood">
+    <option value = "0">How's your mood?<option>
+    ${allMoods.map((mood) => {
+      return `<option value="${ mood.id }">${ mood.label}</option>`
+      }).join("")
+  } 
     </select>
+    
 
     <button id="saveEntry" type="button">Record entry</button>
   </form>
   `
-  }
+    })//ends getMoods then
+  }//ends render function
 
   
 
@@ -41,13 +45,13 @@ contentTarget.innerHTML = `
       const date = document.querySelector("#form__date").value
       const concept = document.querySelector("#form__concepts").value
       const entry = document.querySelector("#form__entry").value
-      const mood = document.querySelector("#form__mood").value
+      const moodId = parseInt(document.querySelector("#form__mood").value)
 
       const newEntry = {
         date: date,
         concept: concept,
         entry: entry,
-        mood: mood
+        moodId: parseInt(moodId)
       }
       saveJournalEntry(newEntry)
       getEntries()

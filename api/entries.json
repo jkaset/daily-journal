@@ -1,25 +1,48 @@
 {
   "entries": [
     {
+      "date": "2020-11-06",
+      "concept": "ERD",
+      "entry": "Built my first ERD in dbDiagram! So far, so good!",
+      "moodId": 2,
+      "id": 1
+    },
+    {
+      "date": "2020-11-07",
+      "concept": "Eventhub stuff",
+      "entry": "Built a mini project to practice eventhubs. Still a little confusing.",
+      "moodId": 4,
+      "id": 2
+    }
+  ],
+  "moods": [
+    {
       "id": 1,
-      "date": "2020-10-12",
-      "concept": "HTML & CSS",
-      "entry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
-      "mood": "Cryin"
+      "label": "I got this"
     },
     {
       "id": 2,
-      "date": "2020-10-13",
-      "concept": "Git Workflow",
-      "entry": "Repetition helps, just do it over and over and don't work on your main branch!",
-      "mood": "Head might explode"
+      "label": "Chippin away"
     },
     {
       "id": 3,
-      "date": "2020-10-10",
-      "concept": "Importing in scripts",
-      "entry": "Still confused about it, but you have to export and import functions in scripts and then put one import and function in main.js.",
-      "mood": "Chippin away"
+      "label": "I am genius"
+    },
+    {
+      "id": 4,
+      "label": "Fallin behind"
+    },
+    {
+      "id": 5,
+      "label": "Banging head on keys"
+    },
+    {
+      "id": 6,
+      "label": "Head might explode"
+    },
+    {
+      "id": 7,
+      "label": "I'm cryeeeeng"
     }
   ]
 }

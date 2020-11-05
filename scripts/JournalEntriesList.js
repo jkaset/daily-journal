@@ -1,5 +1,6 @@
 import { getEntries, useJournalEntries } from "./JournalDataProvider.js"
 import { JournalEntryComponent } from "./JournalEntry.js"
+import { getMoods, useMoods} from "./MoodProvider.js"
 
 const contentTarget = document.querySelector(".diary")
 const eventHub = document.querySelector(".container")
@@ -7,85 +8,44 @@ const eventHub = document.querySelector(".container")
 eventHub.addEventListener("entryStateChanged", () => {EntryListComponent()})
 
 export const EntryListComponent = () => {
-    //THIS WORKED BUT DIDN'T REFRESH
-    // Use the journal entry data from the data provider component
-    // const entryLog = document.querySelector(".diary")
-    // const entries = useJournalEntries()
-    
-    //THIS WORKED BUT DIDN'T REFRESH
-    // entryLog.innerHTML += `
-    // <div class="oneEntry">
-    //         <div class="entryEach">${entries.map(entry => JournalEntryComponent(entry)).join("")}</div>
-    // </div>
-    // `   
-
-    getEntries()
-    
+     getEntries()
+    .then(getMoods)
     .then(() => {
         const allEntries = useJournalEntries()
-        render(allEntries)
+        const allMoods = useMoods()
+        render(allEntries, allMoods)
     
     })
 
 }
 
-const render = (entriesArray) => {
-    let entriesHTMLRepresentations = ""
-    for (const entry of entriesArray) {
-        entriesHTMLRepresentations += JournalEntryComponent(entry)
-    }
-    contentTarget.innerHTML = `
-        ${entriesHTMLRepresentations}
-    `
-}
-        
-//     entryLog.innerHTML += `
-//         <div class="oneEntry">
-            
-//             <div class="entryEach">${entryHTMLRepresentations}</div>
-            
-//         </div>
-//     `   
-// }
+// const render = (entriesArray) => {
 
-// DOM reference to where all entries will be rendered
-// CHANGED CLASS HERE
-// MY CODE TO LOOK LIKE JISIES
-// const buildEntryContainerHTML = (array) => {
-//     let entryHTML = "" 
-//     for const (element of array) {
-//         entryHTML += JournalEntryComponent(element)
+//     let entriesHTMLRepresentations = ""
+//     for (const entry of entriesArray) {
+//         entriesHTMLRepresentations += JournalEntryComponent(entry)
 //     }
-//     return entryHTML
+//     contentTarget.innerHTML = `
+//         ${entriesHTMLRepresentations}
+//     `
 // }
 
+const render = (entriesArray, moodsArray) => {
+    contentTarget.innerHTML = entriesArray.map(entry => {
+        const relatedMood = moodsArray.find(mood => mood.id === entry.moodId)
+        //console.log(relatedMood)
+        return `
+        <section id="entry--${entry.id}" class="journalEntry">
+        <div>Date: ${entry.date}</div>
+        <div>Concept: ${entry.concept}</div>
+        <div>Entry: ${entry.entry}</div>
+        <div>Mood: ${relatedMood.label}</div>
+        <button type="button">edit</button>
+        <button type="button">delete</button>
+      </section>
+        `
+    })
+}
 
-// export const EntryListComponent = () => {
 
-//     //MOVED THIS CODE INTO FUNCTION
-//     const entryLog = document.querySelector(".diary")
-    
-//     const entries = useJournalEntries()
-//     console.log(entries)
-
-    // for (const entry of entries) {
-
-      //CODE I ADDED and COMMENTED OUT:
-    // journalHTMLRepresentations += JournalEntryComponent(entry)
-    //     return journalHTMLRepresentations
-    // }
-
-    
-    
-     //END OF CODE I ADDED
-
-        /*
-            Invoke the component that returns an
-            HTML representation of a single entry
-        */
-        // EntryListComponent.innerHTML += `
-        // <article class="diary">
-        //     ${journalHTMLRepresentations}
-        // </article>
-        // `
-    // }
+        
