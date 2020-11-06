@@ -5,6 +5,7 @@
       "concept": "ERD",
       "entry": "Built my first ERD in dbDiagram! So far, so good!",
       "moodId": 2,
+      "instructorId": 1,
       "id": 1
     },
     {
@@ -12,7 +13,16 @@
       "concept": "Eventhub stuff",
       "entry": "Built a mini project to practice eventhubs. Still a little confusing.",
       "moodId": 4,
+      "instructorId": 3,
       "id": 2
+    },
+    {
+      "date": "2020-11-07",
+      "concept": "lkaflk",
+      "entry": "lklk",
+      "moodId": 1,
+      "instructorId": 1,
+      "id": 3
     }
   ],
   "moods": [
@@ -43,6 +53,28 @@
     {
       "id": 7,
       "label": "I'm cryeeeeng"
+    }
+  ],
+  "instructors": [
+    {
+      "id": 1,
+      "first_name": "Jisie",
+      "last_name": "David"
+    },
+    {
+      "id": 2,
+      "first_name": "Scott",
+      "last_name": "Silver"
+    },
+    {
+      "id": 3,
+      "first_name": "Madi",
+      "last_name": "Pepper"
+    },
+    {
+      "id": 4,
+      "first_name": "Bryan",
+      "last_name": "Nilson"
     }
   ]
 }

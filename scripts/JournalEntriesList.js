@@ -38,6 +38,7 @@ const render = (entriesArray, moodsArray) => {
         <section id="entry--${entry.id}" class="journalEntry">
         <div>Date: ${entry.date}</div>
         <div>Concept: ${entry.concept}</div>
+        <div>Concept: ${relatedInstructor.first_name}</div>
         <div>Entry: ${entry.entry}</div>
         <div>Mood: ${relatedMood.label}</div>
         <button type="button">edit</button>
