@@ -44,7 +44,7 @@ const render = (entriesArray, moodsArray) => {
         <button type="button">delete</button>
       </section>
         `
-    })
+    }).join("")
 }
 
 
