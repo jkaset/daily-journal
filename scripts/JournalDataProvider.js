@@ -33,6 +33,12 @@ export const useJournalEntries = () => {
   return sortedByDate
 }
 
+export const deleteEntry = entryId => {
+  return fetch(`http://localhost:8088/entries/${entryId}`,{
+    method: "DELETE"
+  })
+  .then(getEntries)
+}
 
 
 // const dispatchStateChangeEvent = () => {
