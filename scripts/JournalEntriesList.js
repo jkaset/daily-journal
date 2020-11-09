@@ -30,23 +30,34 @@ export const EntryListComponent = () => {
 //     `
 // }
 
-const render = (entriesArray, moodsArray) => {
-    contentTarget.innerHTML = entriesArray.map(entry => {
-        const relatedMood = moodsArray.find(mood => mood.id === entry.moodId)
-        //console.log(relatedMood)
-        return `
-        <section id="entry--${entry.id}" class="journalEntry">
-        <div>Date: ${entry.date}</div>
-        <div>Concept: ${entry.concept}</div>
-        <div>Concept: ${relatedInstructor.first_name}</div>
-        <div>Entry: ${entry.entry}</div>
-        <div>Mood: ${relatedMood.label}</div>
-        <button type="button">edit</button>
-        <button type="button">delete</button>
-      </section>
-        `
-    }).join("")
+const render = (entriesArray, instructorsArray) => {
+    let entryHTML = ""
+    for (const entry of entriesArray) {
+        const relatedInstructor = instructorsArray.find(instructor => instructor.id === entry.instructorId)
+    entryHTML += JournalEntryComponent(relatedInstructor)
+    }
+    console.log(entryHTML)
 }
+
+
+
+//{
+//     contentTarget.innerHTML = entriesArray.map(entry => {
+//         const relatedMood = moodsArray.find(mood => mood.id === entry.moodId)
+//         //console.log(relatedMood)
+//         return `
+//         <section id="entry--${entry.id}" class="journalEntry">
+//         <div>Date: ${entry.date}</div>
+//         <div>Concept: ${entry.concept}</div>
+//         <div>Concept: ${relatedInstructor.first_name}</div>
+//         <div>Entry: ${entry.entry}</div>
+//         <div>Mood: ${relatedMood.label}</div>
+//         <button type="button">edit</button>
+//         <button type="button">delete</button>
+//       </section>
+//         `
+//     }).join("")
+// }
 
 
         
