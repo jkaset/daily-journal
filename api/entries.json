@@ -7,38 +7,6 @@
       "moodId": 2,
       "instructorId": 1,
       "id": 1
-    },
-    {
-      "date": "2020-11-07",
-      "concept": "Eventhub stuff",
-      "entry": "Built a mini project to practice eventhubs. Still a little confusing.",
-      "moodId": 4,
-      "instructorId": 3,
-      "id": 2
-    },
-    {
-      "date": "2020-11-07",
-      "concept": "lkaflk",
-      "entry": "lklk",
-      "moodId": 1,
-      "instructorId": 1,
-      "id": 3
-    },
-    {
-      "date": "2020-11-10",
-      "concept": "this",
-      "entry": "hi",
-      "moodId": 2,
-      "instructorId": 4,
-      "id": 4
-    },
-    {
-      "date": "2020-11-10",
-      "concept": "asef",
-      "entry": "sdf",
-      "moodId": 1,
-      "instructorId": 2,
-      "id": 5
     }
   ],
   "moods": [

@@ -1,4 +1,4 @@
-import { getEntries, useJournalEntries } from "./JournalDataProvider.js"
+import { getEntries, useJournalEntries, deleteEntry } from "./JournalDataProvider.js"
 import { JournalEntryComponent } from "./JournalEntry.js"
 import { getMoods, useMoods} from "./MoodProvider.js"
 
@@ -30,34 +30,48 @@ export const EntryListComponent = () => {
 //     `
 // }
 
-const render = (entriesArray, instructorsArray) => {
-    let entryHTML = ""
-    for (const entry of entriesArray) {
-        const relatedInstructor = instructorsArray.find(instructor => instructor.id === entry.instructorId)
-    entryHTML += JournalEntryComponent(relatedInstructor)
-    }
-    console.log(entryHTML)
+const render = (entriesArray, moodsArray) => 
+{
+    contentTarget.innerHTML = entriesArray.map(entry => {
+        const relatedMood = moodsArray.find(mood => mood.id === entry.moodId)
+        //console.log(relatedMood)
+        return `
+        <section id="entry--${entry.id}" class="journalEntry">
+        <div>Date: ${entry.date}</div>
+        <div>Concept: ${entry.concept}</div>
+        
+        <div>Entry: ${entry.entry}</div>
+        <div>Mood: ${relatedMood.label}</div>
+        <button type="button">edit</button>
+        <button id="deleteNote--${entry.id}" type="button">delete</button>
+      </section>
+        `
+    }).join("")
 }
 
 
-
-//{
-//     contentTarget.innerHTML = entriesArray.map(entry => {
-//         const relatedMood = moodsArray.find(mood => mood.id === entry.moodId)
-//         //console.log(relatedMood)
-//         return `
-//         <section id="entry--${entry.id}" class="journalEntry">
-//         <div>Date: ${entry.date}</div>
-//         <div>Concept: ${entry.concept}</div>
-//         <div>Concept: ${relatedInstructor.first_name}</div>
-//         <div>Entry: ${entry.entry}</div>
-//         <div>Mood: ${relatedMood.label}</div>
-//         <button type="button">edit</button>
-//         <button type="button">delete</button>
-//       </section>
-//         `
-//     }).join("")
+//inside html above <div>Concept: ${related.first_name}</div>
+//trying to do instructors
+// {
+//     let entryHTML = ""
+//     for (const entry of entriesArray) {
+//         const relatedInstructor = instructorsArray.find(instructor => instructor.id === entry.instructorId)
+//     entryHTML += JournalEntryComponent(relatedInstructor)
+//     }
+//     console.log(entryHTML)
 // }
 
+eventHub/addEventListener("click", e => {
+    if (e.target.id.startsWith ("deleteNote--")){
+        //console.log("I'm listnin")
+        const [prefix, id] = e.target.id.split("--")
 
-        
+        deleteEntry(id).then(
+            () => {
+                const updatedEntries = useJournalEntries()
+                const moods = useMoods()
+                render(updatedEntries, moods)
+            }
+        )
+    }
+})
