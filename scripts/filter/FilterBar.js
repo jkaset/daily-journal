@@ -3,11 +3,12 @@ import {MoodFilter} from "./MoodFilter.js"
 const contentTarget = document.querySelector(".filters"
 )
 
-const FilterBar = () = {
-  render = () = {
+export const FilterBar = () => {
+  const render = () => {
     contentTarget.innerHTML = `
       ${MoodFilter()}
     `
   }
   render()
 }
+
