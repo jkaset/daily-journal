@@ -1,49 +1,16 @@
-//import {useMoods, getMoods} from './MoodProvider.js'
+import {useMoods, getMoods} from '../MoodProvider.js'
+import {MoodButton} from './Mood.js'
 
 
 
-// export const MoodFilter = () => {
-  
-    // getMoods()
-    //   .then(() => {
-    //     const allMoods = useMoods()
-    //     render(allMoods)
-    //   })       
-    // }
-
-// const render = (moodsArray, entriesArray) => {
-//   let moodsHTMLRepresentations = ""
-//   for (const entry of entries) {
-//     const relatedMood = moodsArray.find(mood => mood.id === entries.moodId)
-
-//     moodsHTMLRepresentations += MoodButtonHTML(entry, relatedMood)
-//   }
-
-// }
-let allMoods = []
-
-// const MoodFilter = () => {
-//     getMoods()
-//     .then(() => {
-//       const allMoods = useMoods()
-//     render(allMoods)
-//     })
-// }
-        
 export const MoodFilter = () => {
-   
-    return `
-        <fieldset class="fieldset">
-            <legend>Filter Journal Entries by Mood</legend>
-            ${
-                allMoods.map(
-                    (mood) => {
-                        return `<input type="radio" name="moodFilter" value="${ mood.id }"/>
-                        <label for="moodFilter--happy">${ mood.label }</label>
-                        `
-                    }
-                ).join("")
-            }
-        </fieldset>
-        `
-    }
+    getMoods().then(() => {
+      const moodContainer = document.querySelector(".filters")
+      const moodArray = useMoods()
+      let buildMoodList = ""
+      for (const mood of moodArray) {
+        buildMoodList += MoodButton(mood)
+      }
+      moodContainer.innerHTML += `<legend><h2>What's your mood?</h2>${buildMoodList}</legend>`
+    })
+  }

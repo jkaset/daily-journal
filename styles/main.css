@@ -69,3 +69,7 @@ button:hover {
 .diary {
   min-width: 60%;
 }
+
+.filters {
+  padding: 10px;
+}
