@@ -63,17 +63,17 @@ const render = (entriesArray, moodsArray) =>
 
 
 //TRYING TO EVENTHUB RADIO BUTTONS
-// eventHub/addEventListener("click", e => {
+// eventHub.addEventListener("click", e => {
 //     if (e.target.id.startsWith ("deleteNote--")){
-//         //console.log("I'm listnin")
-//         const [prefix, id] = e.target.id.split("--")
+//         console.log("I'm listnin")
+    //     const [prefix, id] = e.target.id.split("--")
 
-//         deleteEntry(id).then(
-//             () => {
-//                 const updatedEntries = useJournalEntries()
-//                 const moods = useMoods()
-//                 render(updatedEntries, moods)
-//             }
-//         )
-//     }
+    //     deleteEntry(id).then(
+    //         () => {
+    //             const updatedEntries = useJournalEntries()
+    //             const moods = useMoods()
+    //             render(updatedEntries, moods)
+    //         }
+    //     )
+//      }
 // })
