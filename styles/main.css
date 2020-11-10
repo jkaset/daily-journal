@@ -65,3 +65,7 @@ button:hover {
 .journalEntry {
   margin-bottom: 20px;
 }
+
+.diary {
+  min-width: 60%;
+}

@@ -61,17 +61,19 @@ const render = (entriesArray, moodsArray) =>
 //     console.log(entryHTML)
 // }
 
-eventHub/addEventListener("click", e => {
-    if (e.target.id.startsWith ("deleteNote--")){
-        //console.log("I'm listnin")
-        const [prefix, id] = e.target.id.split("--")
 
-        deleteEntry(id).then(
-            () => {
-                const updatedEntries = useJournalEntries()
-                const moods = useMoods()
-                render(updatedEntries, moods)
-            }
-        )
-    }
-})
+//TRYING TO EVENTHUB RADIO BUTTONS
+// eventHub/addEventListener("click", e => {
+//     if (e.target.id.startsWith ("deleteNote--")){
+//         //console.log("I'm listnin")
+//         const [prefix, id] = e.target.id.split("--")
+
+//         deleteEntry(id).then(
+//             () => {
+//                 const updatedEntries = useJournalEntries()
+//                 const moods = useMoods()
+//                 render(updatedEntries, moods)
+//             }
+//         )
+//     }
+// })
