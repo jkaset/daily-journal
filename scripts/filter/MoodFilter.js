@@ -1,16 +1,15 @@
-import {useMoods, getMoods} from './MoodProvider.js'
-import {MoodButtonHTML} from './MoodButtonHTML.js'
+//import {useMoods, getMoods} from './MoodProvider.js'
 
 
 
 // export const MoodFilter = () => {
   
-//     getMoods()
-//       .then(() => {
-//         const allMoods = useMoods()
-//         render(allMoods)
-//       })       
-//     }
+    // getMoods()
+    //   .then(() => {
+    //     const allMoods = useMoods()
+    //     render(allMoods)
+    //   })       
+    // }
 
 // const render = (moodsArray, entriesArray) => {
 //   let moodsHTMLRepresentations = ""
@@ -21,20 +20,30 @@ import {MoodButtonHTML} from './MoodButtonHTML.js'
 //   }
 
 // }
+let allMoods = []
 
-
-// export const MoodFilter = () => {
-//   return `
-//       <fieldset class="fieldset">
-//           <legend>Filter Journal Entries by Mood</legend>
-//           ${allMoods.map(
-//                   (mood) => {
-//                       return `<input type="radio" name="moodFilter" value="${ mood.id }"/>
-//                       <label for="moodFilter--happy">${ mood.label }</label>
-//                       `
-//                   }
-//               ).join("")
-//           }
-//       </fieldset>
-//       `
+// const MoodFilter = () => {
+//     getMoods()
+//     .then(() => {
+//       const allMoods = useMoods()
+//     render(allMoods)
+//     })
 // }
+        
+export const MoodFilter = () => {
+   
+    return `
+        <fieldset class="fieldset">
+            <legend>Filter Journal Entries by Mood</legend>
+            ${
+                allMoods.map(
+                    (mood) => {
+                        return `<input type="radio" name="moodFilter" value="${ mood.id }"/>
+                        <label for="moodFilter--happy">${ mood.label }</label>
+                        `
+                    }
+                ).join("")
+            }
+        </fieldset>
+        `
+    }

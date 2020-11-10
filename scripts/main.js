@@ -7,5 +7,4 @@ import {FilterBar} from './filter/FilterBar.js'
 JournalFormComponent()
 getEntries()
 .then(EntryListComponent)
-
 FilterBar()
