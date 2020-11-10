@@ -4,7 +4,7 @@ const contentTarget = document.querySelector(".filters"
 )
 
 export const FilterBar = () => {
-  const render = () => {
+  render = () => {
     contentTarget.innerHTML = `
       ${MoodFilter()}
     `
