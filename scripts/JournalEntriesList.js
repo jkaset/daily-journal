@@ -31,7 +31,7 @@ export const EntryListComponent = () => {
 //     `
 // }
 
-const render = (entriesArray, moodsArray, filteredEntriesArray) => 
+const render = (entriesArray, moodsArray) => 
 {
     contentTarget.innerHTML = entriesArray.map(entry => {
         const relatedMood = moodsArray.find(mood => mood.id === entry.moodId)
@@ -86,6 +86,7 @@ eventHub.addEventListener("moodFilter", moodFilterEventObj => {
     const allMoods = useMoods()
     console.log("Moodfilter Event is heard!", selectedMood)
     
+    
     //console.log("entries array", journalEntriesArray)
 
     const filteredEntriesArray = allEntries.filter(moodFilterEventObj => {
@@ -96,6 +97,6 @@ eventHub.addEventListener("moodFilter", moodFilterEventObj => {
     })
     console.log(filteredEntriesArray)
     //contentTarget.innerHTML = `${}`
-    render(allEntries, allMoods, filteredEntriesArray)
+    render(filteredEntriesArray, allEntries)
 
 })//end of evenHub fuct
