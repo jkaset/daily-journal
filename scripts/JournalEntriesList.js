@@ -77,3 +77,20 @@ const render = (entriesArray, moodsArray) =>
     //     )
 //      }
 // })
+
+eventHub.addEventListener("moodFilter", moodFilterEventObj => {
+    const selectedMood = moodFilterEventObj.detail.moodName
+    console.log("Moodfilter Event is heard!", selectedMood)
+    const journalEntriesArray = useJournalEntries()
+    //console.log("entries array", journalEntriesArray)
+
+    const filteredEntriesArray = journalEntriesArray.filter(moodFilterEventObj => {
+        if (moodFilterEventObj.moodId === selectedMood) {
+            return true
+        }
+
+    })
+    console.log(filteredEntriesArray)
+//     render(filteredEntriesArray)
+//   console.log("Did it DOM")
+})//end of evenHub fuct

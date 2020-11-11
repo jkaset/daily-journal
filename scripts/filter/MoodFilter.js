@@ -11,6 +11,6 @@ export const MoodFilter = () => {
       for (const mood of moodArray) {
         buildMoodList += MoodButton(mood)
       }
-      moodContainer.innerHTML += `<legend><h2>What's your mood?</h2>${buildMoodList}</legend>`
+      moodContainer.innerHTML += `<legend><h3>Filter by mood</h3><ul>${buildMoodList}<ul></legend>`
     })
   }

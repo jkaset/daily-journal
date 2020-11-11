@@ -15,6 +15,30 @@
       "moodId": 7,
       "instructorId": 1,
       "id": 2
+    },
+    {
+      "date": "2020-11-11",
+      "concept": "Finally understanding Eventhubs ",
+      "entry": "Kinda",
+      "moodId": 6,
+      "instructorId": 3,
+      "id": 3
+    },
+    {
+      "date": "2020-11-03",
+      "concept": "What is a loop!",
+      "entry": "Wait what is one though",
+      "moodId": 1,
+      "instructorId": 1,
+      "id": 4
+    },
+    {
+      "date": "2020-11-12",
+      "concept": "I learned Python in one day",
+      "entry": "It was easy",
+      "moodId": 1,
+      "instructorId": 1,
+      "id": 5
     }
   ],
   "moods": [
