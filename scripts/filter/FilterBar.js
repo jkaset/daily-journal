@@ -13,10 +13,17 @@ const render = () => {
 }
 
 //event for radio buttons
-eventHub.addEventListener("change", changeEvent => {
+eventHub.addEventListener("change", e => {
   //console.log("change happend")
-  if (changeEvent.target.name === "moodFilter") {
+  if (e.target.name === "moodFilter") {
   //console.log("selected!")
+    const moodButtonEvent = new CustomEvent("moodFilter", {
+      detail: {
+        moodName: parseInt(e.target.value)
+      }
+    })
     
+    //console.log("Dispatch event to event hub")
+    eventHub.dispatchEvent(moodButtonEvent)
   }
 })
