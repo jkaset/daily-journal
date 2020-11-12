@@ -1,3 +1,4 @@
+import { getMoods } from "../MoodProvider.js"
 import {MoodFilter} from "./MoodFilter.js"
 
 const contentTarget = document.querySelector(".filters")
@@ -8,8 +9,10 @@ export const FilterBar = () => {
 }
 
 const render = () => {
+  getMoods().then(()=> {
   contentTarget.innerHTML = `
   ${MoodFilter()}`
+})
 }
 
 //event for radio buttons
