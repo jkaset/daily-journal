@@ -92,11 +92,12 @@ eventHub.addEventListener("moodFilter", moodFilterEventObj => {
     const filteredEntriesArray = allEntries.filter(moodFilterEventObj => {
         if (moodFilterEventObj.moodId === selectedMood) {
             return true
+            
         }
 
     })
     console.log(filteredEntriesArray)
     //contentTarget.innerHTML = `${}`
-    render(filteredEntriesArray, allEntries)
+    render(filteredEntriesArray, allMoods)
 
 })//end of evenHub fuct
