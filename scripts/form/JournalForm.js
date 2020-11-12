@@ -12,27 +12,29 @@ getInstructors().then(() => {
   const allInstructors= useInstructors()
 
 contentTarget.innerHTML = `
-<form action="" method="" class="form" >
+<div class="formBox">
+<form action="" method="" class="form">
     
-    <label class="form__element" for="today">Date:</label>
-      <input type="date" id="form__date" name="today">
+    <label class="form__element" for="today"></label>
+      <input type="date" id="form__date" placeholder="Select today's date" name="today">
 
-      <label class="form__element" for="concept">Concepts covered:</label>
-      <textarea class="form__element" for="concept" id="form__concepts"></textarea>
+      <label class="form__element" for="concept"></label>
+      <textarea class="form__element" for="concept" placeholder="Concepts covered" id="form__concepts"></textarea>
 
-    <label class="form__element" for="instructor">Instructor:</label>
+    <label class="form__element" for="instructor"></label>
     <select name="instructor" id="form__instructor">
+    <option value = "0">Choose today's instructor</option>
     ${allInstructors.map((instructor) => {
       return `<option value="${instructor.id}">${instructor.first_name} ${instructor.last_name}</option>`
     }).join("")
   }
     </select>
     
-    <label class="form__element" for="entry">Entry:</label>
+    <label class="form__element" for="entry"></label>
     <textarea class="form__element--entry" for="entry" id="form__entry" placeholder="Dear diary,"></textarea>
       
 
-    <label class="form__element" for="mood">Vibe:</label>
+    <label class="form__element" for="mood"></label>
     <select name="mood" id="form__mood">
     <option value = "0">How's your mood?</option>
     ${allMoods.map((mood) => {
@@ -40,10 +42,11 @@ contentTarget.innerHTML = `
       }).join("")
   } 
     </select>
-    
+    </div>
 
     <button id="saveEntry" type="button">Record entry</button>
-  </form>
+    </form>
+    
   `
     })//ends getMoods then
   })
