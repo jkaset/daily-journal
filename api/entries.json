@@ -1,14 +1,6 @@
 {
   "entries": [
     {
-      "date": "2020-11-06",
-      "concept": "ERD",
-      "entry": "Built my first ERD in dbDiagram! So far, so good!",
-      "moodId": 2,
-      "instructorId": 1,
-      "id": 1
-    },
-    {
       "date": "2020-11-10",
       "concept": "Eventhub",
       "entry": "I still don't get it",
@@ -25,20 +17,28 @@
       "id": 3
     },
     {
-      "date": "2020-11-03",
-      "concept": "What is a loop!",
-      "entry": "Wait what is one though",
-      "moodId": 1,
-      "instructorId": 1,
-      "id": 4
-    },
-    {
       "date": "2020-11-12",
       "concept": "I learned Python in one day",
       "entry": "It was easy",
       "moodId": 1,
       "instructorId": 1,
       "id": 5
+    },
+    {
+      "date": "2020-11-12",
+      "concept": "Fixed my delete button",
+      "entry": "I commented it out, no idea why.",
+      "moodId": 3,
+      "instructorId": 2,
+      "id": 6
+    },
+    {
+      "date": "2020-11-11",
+      "concept": "Displayed Instructors in the List module",
+      "entry": "I think it maybe worked",
+      "moodId": 2,
+      "instructorId": 4,
+      "id": 7
     }
   ],
   "moods": [
