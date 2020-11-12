@@ -5,6 +5,9 @@ img {
   width: 100%;
 }
 
+h3 {
+  padding: 2px 0 3px 0;
+}
 .name {
   text-align: right;
   margin-right: 6em;
@@ -13,7 +16,9 @@ img {
 }
 
 body {
-  background-color: pink;
+  background-image: url("https://images.unsplash.com/photo-1491902761018-cac1cd4df4ae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60");
+  background-color: rgb(216, 165, 165);
+  background-blend-mode: screen;
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
   color: black;
@@ -25,11 +30,14 @@ body {
 }
 
 .form__main {
-  margin: 3em 0 3em 4em;
+  margin: 2em 6em 2em 6em;
+  
 }
 
+
+
 .form__element--entry {
-  width: 90%;
+  
   height: 10em;
 }
 
@@ -67,9 +75,30 @@ button:hover {
 }
 
 .diary {
-  min-width: 60%;
+  padding: 30px 0 10px 30px;
+  
 }
 
 .filters {
   padding: 10px;
+  margin: 2em 6em 2em 6em;
 }
+
+.moodF {
+  list-style-type: none;
+}
+
+.filterBox {
+  border: black solid 1px;
+  background-color: white;
+  padding: 0 0 0 20px;
+  
+}
+
+h3 {
+  font-weight: bold;
+  text-align: center;
+}
+
+
+

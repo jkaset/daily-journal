@@ -39,6 +39,8 @@ const render = (entriesArray, moodsArray, instructorArray) =>
         //console.log(relatedMood)
         const relatedInstructor = instructorArray.find(instructor => instructor.id === entry.instructorId)
         return `
+  
+
         <section id="entry--${entry.id}" class="journalEntry">
         <div>Date: ${entry.date}</div>
         <div>Concept: ${entry.concept}</div>

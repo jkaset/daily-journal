@@ -39,6 +39,14 @@
       "moodId": 2,
       "instructorId": 4,
       "id": 7
+    },
+    {
+      "date": "2020-11-13",
+      "concept": "Styling",
+      "entry": "Hard to style radio buttons tho",
+      "moodId": 4,
+      "instructorId": 2,
+      "id": 8
     }
   ],
   "moods": [
